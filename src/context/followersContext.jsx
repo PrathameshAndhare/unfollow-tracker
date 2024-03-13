@@ -4,7 +4,7 @@ import { createContext, useState } from 'react';
 export const FollowersContext = createContext();
 
 export const FollowersProvider = ({ children }) => {
-	const [unfollowing, SetUnfollowing] = useState();
+	const [unfollowing, SetUnfollowing] = useState(); 
 
 	return (
 		<FollowersContext.Provider value={{ unfollowing, SetUnfollowing }}>
