@@ -10,7 +10,7 @@
 ```
 
 >[!TIP]
->To run it locally:
+> ### To run it locally:
 >* Clone this repository.
 >* `npm install vite --save-dev` to install all required dependencies.
 >* `npm run dev` to start the local server (this project uses create-react-app)
