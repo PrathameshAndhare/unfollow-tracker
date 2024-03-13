@@ -4,7 +4,7 @@ function fetchPagination(url, page = 1, previousResponse = []) {
 			Authorization: `token${import.meta.env.VITE_GITHUB_TOKEN}`,
 			// 'User-Agent': 'request',
 			// Accept: 'application/vnd.github.v3+json',
-		},
+		}, 
 	})
 		.then(response => {
 			if (response.ok) {
