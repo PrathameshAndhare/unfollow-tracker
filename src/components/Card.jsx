@@ -2,7 +2,7 @@ import link from '../assets/link.svg';
 import PropTypes from 'prop-types';
 import { CardStyle } from '../styles/cardStyle.css';
 
-const Card = ({ color, data }) => {
+const Card = ({ color, data }) => { 
 	console.log(data);
 	return (
 		<div>
