@@ -4,7 +4,7 @@ import HeaderStyle from '../styles/headerStyle.css';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { fetchPagination } from '../helpers/fetch';
 import { getUnfollowers } from '../helpers/getUnfollowers';
-import { FollowersContext } from '../context/followersContext';
+import { FollowersContext } from '../context/followersContext'; 
 import { UnfollowersContext } from '../context/unfollowersContext';
 
 export default function Header() {
