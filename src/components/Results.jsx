@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { ResultsStyle } from '../styles/resultsStyle.css';
 import { FollowersContext } from '../context/followersContext';
 import { UnfollowersContext } from '../context/unfollowersContext';
-
+ 
 const Results = () => {
 	const { unfollowing } = useContext(FollowersContext);
 	const { unfollowers } = useContext(UnfollowersContext);
