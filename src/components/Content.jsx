@@ -11,7 +11,7 @@ export default function Content() {
 				<p>
 					Pretty simple. just type your GitHub user in the search box and hit
 					search
-				</p>
+				</p> 
 			</section>
 			<section>
 				<p>
