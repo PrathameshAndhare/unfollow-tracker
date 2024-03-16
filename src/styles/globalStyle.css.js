@@ -2,11 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root{
-    --white: #fff;
+    --white: blue;
     --black: #000;
     --blue: #58C1FC;
     --gray: #616161;
-    --whitesmoke: #F2F2F2;
+    --whitesmoke: blue;
   }
   html {
     box-sizing: border-box;
