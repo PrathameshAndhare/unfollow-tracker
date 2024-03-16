@@ -4,11 +4,11 @@ import HeaderStyle from '../styles/headerStyle.css';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { fetchPagination } from '../helpers/fetch';
 import { getUnfollowers } from '../helpers/getUnfollowers';
-import { FollowersContext } from '../context/followersContext'; 
+import { FollowersContext } from '../context/followersContext';
 import { UnfollowersContext } from '../context/unfollowersContext';
 
 export default function Header() {
-	const refUserInput = useRef('');
+	const refUserInput = useRef(''); 
 	const [user, setUser] = useState('');
 	const [loader, setLoader] = useState(false);
 	const { SetUnfollowing } = useContext(FollowersContext);
@@ -18,6 +18,17 @@ export default function Header() {
 		setUser(refUserInput.current.value.toLowerCase());
 		refUserInput.current.value = '';
 	};
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleClick();
+        }
+    };
+
+    useEffect(() => {
+        // Set focus to the input field when the component mounts
+        refUserInput.current.focus();
+    }, []);
 
 	useEffect(() => {
 		if (user === '') return;
@@ -33,8 +44,8 @@ export default function Header() {
 				fetchPagination(followingUrl),
 			]);
 
-			SetUnfollowers(getUnfollowers(follower, following));
-			SetUnfollowing(getUnfollowers(following, follower));
+			SetUnfollowers(getUnfollowers(follower, following));// you do not follow
+			SetUnfollowing(getUnfollowers(following, follower));// do not follow you
 
 			setLoader(false);
 		};
@@ -46,7 +57,7 @@ export default function Header() {
 
 	return (
 		<HeaderStyle>
-			<h3>GitHub unfollow tracker</h3>
+			<h3>GitHub Unfollower Tracker</h3>
 
 			<div className='wrapper'>
 				<div className='input__wrapper'>
@@ -55,7 +66,9 @@ export default function Header() {
 						ref={refUserInput}
 						type='text'
 						name='user'
-						placeholder='your GitHub user here...'
+                        onKeyPress={handleKeyPress}
+                        
+						placeholder='Enter GitHub username here'
 						required
 					/>
 				</div>
@@ -68,3 +81,11 @@ export default function Header() {
 		</HeaderStyle>
 	);
 }
+
+// state if changed, componenet re renders, but if ref changed , componenet dosent rerenders.
+
+// to avoid reinitialization of variables etc.. everytime componenet rerenders, useRef is used 
+
+// Promise.all is used to concurrently fetch data from two different URLs (followersUrl and followingUrl). Both fetchPagination calls return promises, 
+// and Promise.all waits for both promises to resolve. Once both promises have resolved, follower and following will contain the resolved 
+// values (data fetched from the respective URLs) in the same order as they were provided in the input array. 
