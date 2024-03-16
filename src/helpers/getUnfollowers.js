@@ -6,7 +6,7 @@ function getUnfollowers(firstArray = [], secondArray = [], arrayCopy = []) {
 			if (firstArray[index].login === arrayCopy[index1].login) {
 				arrayCopy.splice(index1, 1);
 			}
-		} 
+		}
 	}
 
 	return arrayCopy;
