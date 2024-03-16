@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { ResultsStyle } from '../styles/resultsStyle.css';
 import { FollowersContext } from '../context/followersContext';
 import { UnfollowersContext } from '../context/unfollowersContext';
- 
+
 const Results = () => {
 	const { unfollowing } = useContext(FollowersContext);
 	const { unfollowers } = useContext(UnfollowersContext);
@@ -16,13 +16,13 @@ const Results = () => {
 	return (
 		<ResultsStyle>
 			<section className='gray'>
-				<h4>Are not following you back</h4>
+				<h4>Not following you back</h4>
 				{!unfollowers.length ? (
 					<p>
-						cool! &#127881; <br /> You don&apos;t have unfollowers yet
+						cool! &#127881; <br /> You don&apos;t have unfollowers yet!
 					</p>
 				) : (
-					<Card color={true} data={unfollowers} />
+					<Card data={unfollowers} />
 				)}
 			</section>
 
@@ -30,10 +30,10 @@ const Results = () => {
 				<h4>You are not following back</h4>
 				{!unfollowing.length ? (
 					<p>
-						Great! &#127881; <br /> You are following all your followers
+						Great! &#127881; <br /> You are following all your followers!
 					</p>
 				) : (
-					<Card color={false} data={unfollowing} />
+					<Card data={unfollowing} />
 				)}
 			</section>
 		</ResultsStyle>
