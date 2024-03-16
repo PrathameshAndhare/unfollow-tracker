@@ -22,7 +22,7 @@ const HeaderStyle = styled.div`
 				width: 100%;
 				padding: 5px 10px;
 				border: 0;
-
+                background-color: rgb(248, 248, 227);
 				::placeholder {
 					color: var(--gray);
 				}
@@ -43,13 +43,17 @@ const HeaderStyle = styled.div`
 			padding: 2px 10px;
 			border-radius: 5px;
 			border: 0;
-			background-color: var(--blue);
-			color: var(--white);
+			background-color: salmon;
+            color: black;
+            transition: transform 0.3s ease;
 
 			@media (min-width: 768px) {
 				gap: 0.3rem;
 			}
 		}
+        button:hover {
+            transform: scale(1.1);
+        }
 
 		@media (min-width: 768px) {
 			flex-direction: row;
