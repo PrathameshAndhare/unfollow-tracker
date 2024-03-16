@@ -13,10 +13,11 @@ const ContentStyle = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: 5px 0;
+		margin: 15px 0;
 		padding: 5px 20px;
-		background-color: var(--whitesmoke);
+		background-color: rgb(248, 209, 110);;
 		border-radius: 10px;
+        transition: transform 0.4s ease;
 
 		a {
 			text-decoration: underline;
@@ -26,6 +27,10 @@ const ContentStyle = styled.div`
 			color: var(--blue);
 		}
 	}
+
+    section:hover {
+        transform: scale(1.1);
+    }
 `;
 
 export default ContentStyle;
