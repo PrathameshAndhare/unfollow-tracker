@@ -27,6 +27,9 @@ export const ResultsStyle = styled.main`
 		p {
 			text-align: center;
 		}
+        h4 {
+            text-align: center; /* Align h4 text at center */
+        }
 	}
 	@media (min-width: 768px) {
 		flex-direction: row;
@@ -40,12 +43,14 @@ export const ResultsStyle = styled.main`
 	.gray {
 		padding: 1rem 2rem;
 		border-radius: 10px;
-		background-color: var(--whitesmoke);
+        border: 2px solid lightpink;
+		background-color: rgb(247, 239, 218);
 	}
 
 	.border {
 		padding: 1rem 2rem;
 		border-radius: 10px;
-		border: 2px solid var(--whitesmoke);
+		border: 2px solid lightpink;
+        background-color: rgb(247, 239, 218);
 	}
 `;
