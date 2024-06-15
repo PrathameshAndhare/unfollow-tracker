@@ -21,4 +21,5 @@ FollowersProvider.propTypes = {
 // useState() manages a piece of state and provides a function to update it.
 // FollowersContext.Provider wraps around components, giving them access to the unfollowing state and SetUnfollowing function.
 // Any component within FollowersProvider can use the context to access and update the unfollowing state.
-
+// Whatever components you put inside FollowersContext.Provider can use the information in the box.
+// value={{ unfollowing, SetUnfollowing }} means we are putting two things in the box:
