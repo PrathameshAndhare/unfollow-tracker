@@ -16,12 +16,9 @@ export const FollowersProvider = ({ children }) => {
 FollowersProvider.propTypes = {
 	children: PropTypes.node.isRequired,
 };
-// FollowersProvider, you must pass at least one child component or element to it. If you don't provide any children, React will issue a warning in development mode.
 
-// FollowersProvider creates a special container that holds important information (whether a user is unfollowing something) and allows other parts of your app to access and use this information as needed.
+// createContext() creates a "space" to store data.
+// useState() manages a piece of state and provides a function to update it.
+// FollowersContext.Provider wraps around components, giving them access to the unfollowing state and SetUnfollowing function.
+// Any component within FollowersProvider can use the context to access and update the unfollowing state.
 
-// Instead of passing props down everywhere, a space is created by createContext()
-// context -> space 
-// To store data, .Provider is used which takes arg as value which denotes the data to be stored.
-
-// This box (FollowersProvider) wraps around other parts of your application. It tells React that any component inside it can access the unfollowing information and the tool SetUnfollowing.
